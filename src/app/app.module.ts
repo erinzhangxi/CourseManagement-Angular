@@ -15,6 +15,7 @@ import { ModuleListComponent } from './module-list/module-list.component';
 import {ModuleServiceClient} from "./services/module.service.client";
 import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
 import {LessonServiceClient} from "./services/lesson.service.client";
+import { WidgetListComponent } from './widget-list/widget-list.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {LessonServiceClient} from "./services/lesson.service.client";
     CourseGridComponent,
     CourseViewerComponent,
     ModuleListComponent,
-    LessonTabsComponent
+    LessonTabsComponent,
+    WidgetListComponent
   ],
   imports: [
     BrowserModule,
