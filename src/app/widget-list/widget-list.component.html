@@ -15,6 +15,11 @@
     </div>
     <div *ngSwitchCase="'ListWidget'">
       <h1>ListWidget</h1>
+      <ul>
+        <li *ngFor="let item of widget.items.split('|')">
+          {{item}}
+        </li>
+      </ul>
     </div>
     <div *ngSwitchCase="'Exam'">
       <h1>Exam Widget</h1>
