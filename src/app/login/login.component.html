@@ -1,3 +1,14 @@
-<p>
-  login works!
-</p>
+<div class="container-fluid">
+  <h1>Login</h1>
+
+  <input [(ngModel)]="username"
+         placeholder="username"
+         class="form-control"/>
+  <input [(ngModel)]="password"
+         placeholder="password"
+         class="form-control"/>
+  <button (click)="login(username, password)"
+          class="btn btn-primary btn-block">
+    Login
+  </button>
+</div>

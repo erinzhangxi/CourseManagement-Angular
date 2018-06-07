@@ -3,9 +3,11 @@ import { Routes, RouterModule }
 import { WhiteBoardComponent }
   from "./white-board/white-board.component";
 import {CourseViewerComponent} from "./course-viewer/course-viewer.component";
+import {LoginComponent} from "./login/login.component";
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: WhiteBoardComponent},
+  { path: 'login', component: LoginComponent},
   { path: 'course/:courseId', component: CourseViewerComponent },
   { path: 'course/:courseId/module/:moduleId', component: CourseViewerComponent },
   { path: 'course/:courseId/module/:moduleId/lesson/:lessonId', component: CourseViewerComponent },
