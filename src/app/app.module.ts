@@ -17,6 +17,9 @@ import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
 import {LessonServiceClient} from "./services/lesson.service.client";
 import { WidgetListComponent } from './widget-list/widget-list.component';
 import {WidgetServiceClient} from "./services/widget.service.client";
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import {WidgetServiceClient} from "./services/widget.service.client";
     CourseViewerComponent,
     ModuleListComponent,
     LessonTabsComponent,
-    WidgetListComponent
+    WidgetListComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
