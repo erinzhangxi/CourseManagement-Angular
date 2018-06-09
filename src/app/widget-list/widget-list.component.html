@@ -15,8 +15,9 @@
     </div>
     <div *ngSwitchCase="'ListWidget'">
       <h1>ListWidget</h1>
-      <ul>
-        <li *ngFor="let item of widget.items.split('|')">
+      <ul class="list-group">
+        <li class="list-group-item"
+            *ngFor="let item of widget.items.split('|')">
           {{item}}
         </li>
       </ul>

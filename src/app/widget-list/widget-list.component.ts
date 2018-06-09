@@ -11,7 +11,7 @@ export class WidgetListComponent implements OnInit {
 
   constructor(private service: WidgetServiceClient,
               private route: ActivatedRoute) {
-    this.route.params.subscribe(params => this.setContext(params))
+    this.route.params.subscribe(params => this.setContext(params));
   }
 
   context;
