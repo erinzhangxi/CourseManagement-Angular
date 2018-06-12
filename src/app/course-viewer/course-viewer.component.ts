@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {CourseServiceClient} from "../services/course.service.client";
-import {Course} from "../models/coruse.model.client";
+import {Course} from "../models/course.model.client";
 
 @Component({
   selector: 'app-course-viewer',

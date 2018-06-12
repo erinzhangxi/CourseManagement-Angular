@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {WidgetServiceClient} from "../services/widget.service.client";
+import {Widget} from "../models/widget.model.client";
 
 @Component({
   selector: 'app-widget-list',
@@ -15,7 +16,7 @@ export class WidgetListComponent implements OnInit {
   }
 
   context;
-  widgets = [];
+  widgets: Widget[] = [];
   setContext(params) {
     this.context = params;
     this.loadWidgets(params.lessonId);

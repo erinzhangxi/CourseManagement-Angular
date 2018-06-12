@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {LessonServiceClient} from "../services/lesson.service.client";
+import {Lesson} from "../models/lesson.model.client";
 
 @Component({
   selector: 'app-lesson-tabs',
@@ -18,7 +19,7 @@ export class LessonTabsComponent implements OnInit {
   courseId;
   moduleId;
   lessonId;
-  lessons = [];
+  lessons: Lesson[] = [];
 
   setParams(params) {
     this.courseId = params['courseId'];
