@@ -5,6 +5,15 @@ export class UserServiceClient {
       .then(response => response.json());
   }
 
+  updateUser(user) {
+    return fetch('http://localhost:4000/api/profile',
+      {
+        method: 'put',
+        body: JSON.stringify(user),
+        credentials: 'include', // include, same-origin, *omit
+      })
+      .then(response => response.json());
+  }
   findUserByName(username) {
     return fetch('http://localhost:4000/api/user/' + username)
       .then(response => response.json());

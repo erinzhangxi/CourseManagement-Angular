@@ -23,8 +23,10 @@ export class ProfileComponent implements OnInit {
   sections = [];
   userType;
 
-  update(user: User) {
-    console.log(user);
+  update(user) {
+    this.service
+      .updateUser(user)
+      .then((user) => this.user = user);
   }
 
   testbutton() {
