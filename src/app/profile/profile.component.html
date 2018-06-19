@@ -1,6 +1,8 @@
 <div class="container-fluid">
   <h1>Profile</h1>
 
+  <div class="row">
+    <div class="col-6">
   <input [(ngModel)]="user.username"
          placeholder="username"
          class="form-control"/>
@@ -13,12 +15,50 @@
   <input [(ngModel)]="user.email"
          placeholder="email"
          class="form-control"/>
+  <input [(ngModel)]="user.phone"
+         placeholder="phone"
+         class="form-control"/>
+  <input [(ngModel)]="user.address"
+         placeholder="address"
+         class="form-control"/>
+      <h5>Role: {{user.role}}</h5>
+      <span *ngIf="user.role === 'Admin'">
+        <button ng-click="testbutton()"><a routerLink="/admin">Admin</a></button>
+
+        </span>
+
   <button (click)="update(user)"
           class="btn btn-primary btn-block">
     Update
   </button>
+      <h2>Sections ({{sections.length}})</h2>
+      <ul class="list-group">
+        <li *ngFor="let enrollment of sections" class="list-group-item">
+          {{enrollment.section.name}}
+          ({{enrollment.section.seats}})
+        </li>
+      </ul>
 
-  <a routerLink="/login">Logout</a>
+
+    </div>
+    <div class="col-6">
+      <ul class="list-group">
+        <li class="list-group-item active">Enrolled courses</li>
+        <li [ngClass]="{'active': course.id == courseId}"
+            *ngFor="let course of courses"
+            class="list-group-item wbdv">
+          <a routerLink="/course/{{courseId}}">
+            {{course.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+
+
+
+  <a (click)="logout()">Logout</a>
   <a routerLink="/home">Home</a>
 
 </div>

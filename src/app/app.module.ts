@@ -21,6 +21,10 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import {UserServiceClient} from "./services/user.service.client";
+import { AdminComponent } from './admin/admin.component';
+import { SectionListComponent } from './section-list/section-list.component';
+import {SectionServiceClient} from "./services/section.service.client";
+import {CookieService} from "ngx-cookie-service";
 
 @NgModule({
   declarations: [
@@ -35,7 +39,9 @@ import {UserServiceClient} from "./services/user.service.client";
     WidgetListComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    AdminComponent,
+    SectionListComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +54,9 @@ import {UserServiceClient} from "./services/user.service.client";
     ModuleServiceClient,
     LessonServiceClient,
     WidgetServiceClient,
-    UserServiceClient
+    UserServiceClient,
+    SectionServiceClient,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

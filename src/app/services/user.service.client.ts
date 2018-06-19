@@ -5,6 +5,11 @@ export class UserServiceClient {
       .then(response => response.json());
   }
 
+  findUserByName(username) {
+    return fetch('http://localhost:4000/api/user/' + username)
+      .then(response => response.json());
+  }
+
   profile() {
     return fetch('http://localhost:4000/api/profile',
       {
@@ -13,10 +18,19 @@ export class UserServiceClient {
       .then(response => response.json());
   }
 
-  createUser(username, password) {
+  logout() {
+    return fetch('http://localhost:4000/api/logout',
+      {
+        method: 'post',
+        credentials: 'include'
+      });
+  }
+
+  createUser(username, password, userType) {
     const user = {
       username: username,
-      password: password
+      password: password,
+      role: userType
     };
     return fetch('http://localhost:4000/api/user', {
       body: JSON.stringify(user),
@@ -27,4 +41,23 @@ export class UserServiceClient {
       }
     });
   }
+
+  login(username, password, userType) {
+    const user = {
+      username: username,
+      password: password,
+      userType: userType
+    };
+    return fetch('http://localhost:4000/api/login', {
+      body: JSON.stringify(user),
+      credentials: 'include', // include, same-origin, *omit
+      method: 'post',
+      headers: {
+        'content-type': 'application/json'
+      }
+    });
+  }
+
+
+
 }

@@ -10,7 +10,19 @@
   <input [(ngModel)]="password2"
          placeholder="verify password"
          class="form-control"/>
-  <button (click)="register(username, password, password2)"
+
+  <div class="form-group">
+    <label for="type">Select User Type:</label>
+
+    <select [(ngModel)]="userType"
+            class="form-control" id="type">
+      <option>Student</option>
+      <option>Admin</option>
+    </select>
+
+  </div>
+
+  <button (click)="register(username, password, password2, userType)"
           class="btn btn-primary btn-block">
     Register
   </button>

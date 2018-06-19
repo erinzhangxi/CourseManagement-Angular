@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <a class="arrow-button arrow-button--reverse"
+      routerLink="/profile"> Back to Profile
+
+    <div class="arrow-cont arrow-cont-rev">
+      <svg><use xlink:href="assets/img/symbols.svg#arrow"/></svg>
+    </div>
+  </a>
+
+
+  <h1>Sections for course: {{courseId}}</h1>
+
+
+  <input [(ngModel)]="sectionName"
+         placeholder="Section Name"
+         class="form-control">
+  <input [(ngModel)]="seats"
+         placeholder="Seats available"
+         class="form-control">
+  <button (click)="createSection(sectionName, seats)" class="btn btn-success btn-block">
+    Add Section
+  </button>
+
+  <ul class="list-group">
+    <li *ngFor="let section of sections" class="list-group-item">
+      {{section.name}}
+      Number of Seats: {{section.seats}}
+      <button (click)="enroll(section)"
+              class="float-right btn btn-primary">Enroll</button>
+      <button (click)="remove(section)"
+              class="float-right btn btn-danger">Remove</button>
+
+
+    </li>
+  </ul>
+
+</div>
