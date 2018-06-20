@@ -8,7 +8,7 @@
   </a>
 
 
-  <h1>Sections for course: {{courseId}}</h1>
+  <h4>Sections for course: {{courseId}}</h4>
 
 
   <input [(ngModel)]="sectionName"
@@ -25,7 +25,8 @@
     <li *ngFor="let section of sections" class="list-group-item">
       {{section.name}}
       Number of Seats: {{section.seats}}
-      <button (click)="enroll(section)"
+      <button [hidden]="section.seats <= 0"
+              (click)="enroll(section)"
               class="float-right btn btn-primary">Enroll</button>
       <button (click)="remove(section)"
               class="float-right btn btn-danger">Remove</button>
