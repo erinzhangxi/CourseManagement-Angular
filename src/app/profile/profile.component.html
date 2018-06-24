@@ -50,9 +50,13 @@
           Enrolled Sections({{sections.length}})
         </li>
         <li *ngFor="let enrollment of sections" class="list-group-item">
+          alert();
           {{enrollment.section.name}}
           ({{enrollment.section.seats}})
+          <button (click)="unroll(enrollment.section)"
+                  class="float-right btn btn-danger">Unroll</button>
         </li>
+
       </ul>
     </div>
   </div>

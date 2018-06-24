@@ -67,6 +67,30 @@ export class UserServiceClient {
     });
   }
 
+  // checkUserStatus() {
+  //   const url = 'http://localhost:4000/api/session/get/user';
+  //   return fetch(url,
+  //     {
+  //       headers: {
+  //         'content-type': 'application/json'
+  //       },
+  //       method: 'GET',
+  //     });
+  //     // .then(response => console.log(response));
+  // }
 
-
+  checkUserStatus() {
+    const url = 'http://localhost:4000/api/session/get/user';
+    if (fetch (url, {
+      credentials: 'include', // include, same-origin, *omit
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json'
+      }
+    })) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

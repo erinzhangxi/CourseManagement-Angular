@@ -33,6 +33,14 @@ export class ProfileComponent implements OnInit {
     console.log("BUTTON IS CLICKED");
   }
 
+  unroll(enrollment) {
+    // alert(section._id);
+    this.sectionService
+      .unrollStudentInSection(enrollment._id)
+      .then(() => this.sectionService
+        .findSectionsForStudent());
+  }
+
   logout() {
     this.service
       .logout()
@@ -43,8 +51,6 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.username = this.cookiesService.get('username');
     this.userType = this.cookiesService.get('userType');
-    console.log(this.username);
-
     this.service
       .profile()
       .then(user => this.user = user);
@@ -52,6 +58,8 @@ export class ProfileComponent implements OnInit {
     this.sectionService
       .findSectionsForStudent()
       .then(sections => this.sections = sections );
+
+
   }
 
 }

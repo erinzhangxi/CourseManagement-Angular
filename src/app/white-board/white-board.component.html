@@ -1,7 +1,9 @@
 <div class="container-fluid">
 
-  <a routerLink="/login">Login</a>
-  <a routerLink="/register">Register</a>
+  <a hidden=[!isLoggedIn] routerLink="/login">Login</a>
+  <a hidden=[!isLoggedIn] routerLink="/register">Register</a>
+  <a *ngIf="isLoggedIn" routerLink="/profile">Profile</a>
+
 
   <app-course-grid></app-course-grid>
 </div>

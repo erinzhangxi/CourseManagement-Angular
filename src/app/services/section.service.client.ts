@@ -18,6 +18,14 @@ export class SectionServiceClient {
     });
   }
 
+  unrollStudentInSection(enrollmentId) {
+    const url = 'http://localhost:4000/api/enrollment/' +  enrollmentId;
+    return fetch(url, {
+      method: 'delete',
+      credentials: 'include'
+    });
+  }
+
   findSectionsForCourse(courseId) {
     return fetch(this.SECTION_URL.replace('COURSEID', courseId))
       .then(response => response.json());
