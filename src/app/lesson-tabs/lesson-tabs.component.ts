@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {LessonServiceClient} from "../services/lesson.service.client";
 import {Lesson} from "../models/lesson.model.client";
+import {Module} from "../models/module.model.client";
 
 @Component({
   selector: 'app-lesson-tabs',
@@ -18,6 +19,7 @@ export class LessonTabsComponent implements OnInit {
 
   courseId;
   moduleId;
+  module: Module = new Module();
   lessonId;
   lessons: Lesson[] = [];
 
@@ -25,13 +27,13 @@ export class LessonTabsComponent implements OnInit {
     this.courseId = params['courseId'];
     this.moduleId = params['moduleId'];
     this.lessonId = params['lessonId'];
-    this.loadLessons(this.moduleId);
+    this.loadLessons(this.courseId, this.moduleId);
   }
 
-  loadLessons(moduleId) {
+  loadLessons(courseId, moduleId) {
     this.moduleId = moduleId;
     console.log(moduleId);
-    this.service.findLessonsForModule(moduleId)
+    this.service.findLessonsForModule(courseId, moduleId)
       .then(lessons => this.lessons = lessons);
   }
 

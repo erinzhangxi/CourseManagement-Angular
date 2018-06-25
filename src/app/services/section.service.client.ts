@@ -9,6 +9,13 @@ export class SectionServiceClient {
     })
       .then(response => response.json());
   }
+  findCoursesForStudent() {
+    const url = 'http://localhost:4000/api/student/course';
+    return fetch(url, {
+      credentials: 'include'
+    })
+      .then(response => response.json());
+  }
 
   enrollStudentInSection(sectionId) {
     const url = 'http://localhost:4000/api/section/' + sectionId + '/enrollment';
@@ -44,7 +51,7 @@ export class SectionServiceClient {
   }
 
   deleteSection(section) {
-    return fetch("http://localhost:4000/api/section", {
+    return fetch("http://localhost:4000/api/section/" + section, {
       method: 'delete',
       body: JSON.stringify(section),
       headers: {

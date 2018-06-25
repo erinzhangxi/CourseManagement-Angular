@@ -36,12 +36,12 @@
     </div>
     <div class="col-6">
       <ul class="list-group">
-        <li class="list-group-item active">Enrolled courses</li>
-        <li [ngClass]="{'active': course.id == courseId}"
-            *ngFor="let course of courses"
-            class="list-group-item wbdv">
+        <li class="list-group-item active">Enrolled courses ({{courses.length}})</li>
+        <li *ngFor="let course of courses"
+            class="list-group-item"
+            [ngClass]="{'active': course._id == courseId}">
           <a routerLink="/course/{{courseId}}">
-            {{course.title}}</a>
+            {{course.name}}</a>
         </li>
       </ul>
 

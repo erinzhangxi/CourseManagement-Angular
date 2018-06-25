@@ -21,6 +21,7 @@ export class ProfileComponent implements OnInit {
   username;
   password;
   sections = [];
+  courses = [];
   userType;
 
   update(user) {
@@ -58,6 +59,10 @@ export class ProfileComponent implements OnInit {
     this.sectionService
       .findSectionsForStudent()
       .then(sections => this.sections = sections );
+
+    this.sectionService
+      .findCoursesForStudent()
+      .then(courses => this.courses = courses );
 
 
   }
