@@ -10,12 +10,17 @@ export class WhiteBoardComponent implements OnInit {
 
   constructor(private service: UserServiceClient) { }
 
-  isLoggedIn;
+  isLoggedIn = false;
 
   ngOnInit() {
-    console.log(this.isLoggedIn);
-    this.isLoggedIn = this.service.checkUserStatus();
+    this.checkUserStatus();
+  }
+
+  checkUserStatus() {
+    this.service.checkUserStatus()
+       .then((res) => this.isLoggedIn = res);
     console.log(this.isLoggedIn);
   }
+
 
 }

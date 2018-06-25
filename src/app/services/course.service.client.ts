@@ -27,4 +27,12 @@ export class CourseServiceClient {
       }
     });
   }
+
+  enrollStudentInCourse(courseId) {
+    const url = 'http://localhost:4000/api/course/' + courseId + '/enrollment';
+    return fetch(url, {
+      method: 'post',
+      credentials: 'include'
+    });
+  }
 }

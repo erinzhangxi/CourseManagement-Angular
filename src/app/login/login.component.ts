@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
       .login(username, password, userType)
       .then(() =>  this.router.navigate(['profile'])
       );
+
     const date = new Date();
     const minutes = 30;
     date.setTime(date.getTime() + (minutes * 60 * 1000));

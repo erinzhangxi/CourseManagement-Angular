@@ -1,7 +1,7 @@
 <div class="container-fluid">
 
-  <a hidden=[!isLoggedIn] routerLink="/login">Login</a>
-  <a hidden=[!isLoggedIn] routerLink="/register">Register</a>
+  <a *ngIf="!isLoggedIn" routerLink="/login">Login</a>
+  <a *ngIf="!isLoggedIn" routerLink="/register">Register</a>
   <a *ngIf="isLoggedIn" routerLink="/profile">Profile</a>
 
 
